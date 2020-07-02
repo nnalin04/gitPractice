@@ -20,3 +20,11 @@ sorting[c1]=$w
 sorting[c2]=$x
 sorting[c3]=$y
 sorting[c4]=$z
+
+count=0
+
+for i in ${!sorting[@]}
+do
+    arr[$count]=${sorting[$i]}
+    count=$(($count+1))
+done
