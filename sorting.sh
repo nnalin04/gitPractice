@@ -28,5 +28,7 @@ do
     arr[$count]=${sorting[$i]}
     count=$(($count+1))
 done
-
 echo ${arr[*]}| tr " " "\n" | sort -r | tr "\n" " "
+echo
+echo ${arr[*]}| tr " " "\n" | sort -n | tr "\n" " "
+
