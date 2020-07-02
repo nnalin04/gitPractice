@@ -6,25 +6,39 @@ read n
 f1=0
 f2=0
 f3=0
-cH=0
-cT=0
+cHH=0
+cHT=0
+cTH=0
+cTT=0
 
-while [ $f1 -lt $n ]
-do     
-    r1=$((RANDOM%2))
+while [ $f2 -lt $n ]
+do  
+    r1=$((RANDOM%4))
     if [ $r1 -eq 0 ]
     then 
-        cH=$(($cH+1))
+        cHH=$(($cHH+1))
     fi
     if [ $r1 -eq 1 ]
+    then 
+        cHT=$(($cHT+1))
+    fi
+    if [ $r1 -eq 2 ]
+    then 
+        cTH=$(($cTH+1))
+    fi
+    if [ $r1 -eq 3 ]
     then
-        cT=$(($cT+1))
+        cTT=$(($cTT+1))
     fi    
-    f1=$(($f1+1))
+    f2=$(($f2+1))
 done
 
-avgH=$((100*$cH/$n))
-avgT=$((100*$cT/$n))
+avgHH=$((100*$cHH/$n))
+avgHT=$((100*$cHT/$n))
+avgTH=$((100*$cTH/$n))
+avgTT=$((100*$cTT/$n))
 
-echo "the average of H in n toss $avgH%"
-echo "the average of T in n toss $avgT%"
+echo "the average of HH in n toss $avgHH%"
+echo "the average of HT in n toss $avgHT%"
+echo "the average of TH in n toss $avgTH%"
+echo "the average of TT in n toss $avgTT%"
