@@ -20,3 +20,13 @@ done
 
 echo "Heads $countH"
 echo "Tails $countT"
+
+if [ $countH -gt $countT ]
+then
+    dif=$(($countH-$countT))
+    echo "Heads came $dif times more the Tails"
+elif [ $countT -gt $countH ]
+then
+    dif=$(($countT-$countH))
+    echo "Tails came $dif times more the Heads"
+fi
